@@ -1,0 +1,103 @@
+//Widescreens
+@include mediaXL {
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+    
+  }
+  iframe {
+    width: 750px;
+    height: 750px;
+  }
+}
+// Desktops and Laptops
+@include mediaLarge {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .iframe {
+    width: 45vw;
+    height: 45vh;
+  }
+  .project-page {
+    margin-top: 30vh;
+  }
+}
+// Tablets
+@include mediaMed {
+  .home {
+    align-items: center;
+    text-align: center;
+
+    #main-heading {
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+  }
+  .iframe {
+    height: 400px;
+    width: 400px;
+  }
+  ul.menu-nav {
+    float: none;
+    width: 100%;
+    min-height: 0rem;
+  }
+
+  .about-info {
+    grid-template-areas:
+      "bioimage"
+      "bio"
+      "job1"
+      "job2"
+      "job3";
+    grid-template-columns: 1fr;
+  }
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project-page {
+    margin-top: 100vh;
+  }
+  #contact {
+    margin-top: 50vh;
+  }
+}
+
+//Smartphones
+@include mediaSmall {
+  #main-heading {
+    margin-top: 10vh;
+  }
+  .iframe {
+    height: 300px;
+    width: 300px;
+  }
+  .projects {
+    grid-template-columns: 1fr;
+  }
+  .project-page {
+    margin-top: 150vh;
+  }
+  #contact {
+    margin-top: 100vh;
+  }
+}
+
+@include mediaXSmall {
+  .home {
+    padding: 0.1rem;
+  }
+  .iframe {
+    height: 300px;
+    width: 300px;
+  }
+  .projects {
+    grid-template-columns: 1fr;
+  }
+  .project-page {
+    margin: 200vh 0;
+  }
+  #contact {
+    margin-top: 120vh;
+  }
+}

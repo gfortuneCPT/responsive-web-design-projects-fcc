@@ -1,0 +1,69 @@
+$primary-color: rgb(16, 95, 39);
+$secondary-color: rgb(224, 10, 10);
+$tertiary-color: rgb(238, 202, 148);
+$show-home-image: true;
+$home-image: url(/img/background.jpg);
+$background-opacity: 0.6;
+
+@mixin easeOut {
+  color: $secondary-color;
+  transition: all 0.5s ease-out;
+}
+
+@mixin background {
+  @if $show-home-image {
+    &#bg-img {
+      background: $home-image;
+      background-attachment: fixed;
+      background-size: cover;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($primary-color, $background-opacity);
+      }
+    }
+  }
+}
+//Text Contrast Color
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+//media Query Mixins
+@mixin mediaXSmall {
+  @media screen and (max-width: 375px) {
+    @content;
+  }
+}
+@mixin mediaSmall {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaMed {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLarge {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin mediaXL {
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
+}
